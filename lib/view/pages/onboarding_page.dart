@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_wallet/shared/theme.dart';
-import 'package:e_wallet/view/pages/sign_in_page.dart';
 import 'package:e_wallet/view/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
