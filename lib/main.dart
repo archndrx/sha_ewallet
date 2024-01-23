@@ -1,10 +1,10 @@
 import 'package:e_wallet/view/pages/home_page.dart';
 import 'package:e_wallet/view/pages/onboarding_page.dart';
-import 'package:e_wallet/view/pages/sign_in_page.dart';
-import 'package:e_wallet/view/pages/sign_up_page.dart';
-import 'package:e_wallet/view/pages/sign_up_set_id_page.dart';
-import 'package:e_wallet/view/pages/sign_up_set_profile_page.dart';
-import 'package:e_wallet/view/pages/sign_up_success_page.dart';
+import 'package:e_wallet/view/pages/sign_in_pages/sign_in_page.dart';
+import 'package:e_wallet/view/pages/sign_up_pages/sign_up_page.dart';
+import 'package:e_wallet/view/pages/sign_up_pages/sign_up_set_id_page.dart';
+import 'package:e_wallet/view/pages/sign_up_pages/sign_up_set_profile_page.dart';
+import 'package:e_wallet/view/pages/sign_up_pages/sign_up_success_page.dart';
 import 'package:e_wallet/view/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
