@@ -7,11 +7,13 @@ class CustomFormField extends StatelessWidget {
     required this.title,
     this.obscureText = false,
     this.controller,
+    this.keyType,
   });
 
   final String title;
   final bool obscureText;
   final TextEditingController? controller;
+  final TextInputType? keyType;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class CustomFormField extends StatelessWidget {
         TextFormField(
           obscureText: obscureText,
           controller: controller,
+          keyboardType: keyType,
           decoration: InputDecoration(
             contentPadding: const EdgeInsets.all(12),
             border: OutlineInputBorder(
