@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_wallet/shared/theme.dart';
 import 'package:e_wallet/view/pages/sign_in_page.dart';
+import 'package:e_wallet/view/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -101,53 +102,25 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   currentIndex == 2
                       ? Column(
                           children: [
-                            Container(
-                              width: double.infinity,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(56),
-                                color: purpleColor,
-                              ),
-                              child: TextButton(
-                                onPressed: () {
-                                  carouselController.nextPage();
-                                },
-                                child: Text(
-                                  "Get Started",
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semibold,
-                                  ),
-                                ),
-                              ),
+                            CustomFilledButton(
+                              title: 'Get Started',
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
                             ),
                             const SizedBox(
                               height: 20,
                             ),
-                            Container(
-                              width: double.infinity,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(56),
-                                color: whiteColor,
-                              ),
-                              child: TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const SignInpage(),
-                                    ),
-                                  );
-                                },
-                                child: Text(
-                                  'Sign In',
-                                  style: greyTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: regular,
+                            CustomTextButton(
+                              title: 'Sign In',
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const SignInpage(),
                                   ),
-                                ),
-                              ),
+                                );
+                              },
                             ),
                           ],
                         )
@@ -193,26 +166,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                               ),
                             ),
                             const Spacer(),
-                            Container(
+                            CustomFilledButton(
+                              title: 'Continue',
+                              onPressed: () {
+                                carouselController.nextPage();
+                              },
                               width: 150,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(56),
-                                color: purpleColor,
-                              ),
-                              child: TextButton(
-                                onPressed: () {
-                                  carouselController.nextPage();
-                                },
-                                child: Text(
-                                  "Continue",
-                                  style: whiteTextStyle.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: semibold,
-                                  ),
-                                ),
-                              ),
-                            )
+                            ),
                           ],
                         )
                 ],
