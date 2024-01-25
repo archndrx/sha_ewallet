@@ -23,7 +23,6 @@ class ProfilePage extends StatelessWidget {
         title: const Text(
           'My Profile',
         ),
-        backgroundColor: lightBackgroundColor,
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
