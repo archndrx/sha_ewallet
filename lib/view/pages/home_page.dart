@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         children: [
-          buildProfile(),
+          buildProfile(context),
           buildWalletCard(),
           buildLevel(),
           buildServices(),
@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildProfile() {
+  Widget buildProfile(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 40),
       child: Row(
@@ -122,33 +122,38 @@ class HomePage extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Container(
-            width: 60,
-            height: 60,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/img_profile.png'),
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/img_profile.png'),
+                ),
               ),
-            ),
-            child: Align(
-                alignment: Alignment.topRight,
-                child: Container(
-                  width: 19,
-                  height: 19,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: whiteColor,
-                  ),
-                  child: Center(
-                    child: Icon(
-                      Icons.check_circle,
-                      color: greenColor,
-                      size: 18,
+              child: Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    width: 19,
+                    height: 19,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: whiteColor,
                     ),
-                  ),
-                )),
+                    child: Center(
+                      child: Icon(
+                        Icons.check_circle,
+                        color: greenColor,
+                        size: 18,
+                      ),
+                    ),
+                  )),
+            ),
           )
         ],
       ),
