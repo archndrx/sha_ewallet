@@ -10,8 +10,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           onPressed: () {
@@ -22,12 +20,8 @@ class ProfilePage extends StatelessWidget {
             size: 24,
           ),
         ),
-        title: Text(
+        title: const Text(
           'My Profile',
-          style: blackTextStyle.copyWith(
-            fontWeight: semibold,
-            fontSize: 20,
-          ),
         ),
         backgroundColor: lightBackgroundColor,
       ),
@@ -95,12 +89,20 @@ class ProfilePage extends StatelessWidget {
                 ProfileMenuItem(
                   iconUrl: 'assets/ic_edit_profile.png',
                   title: 'Edit Profile',
-                  onTap: () {},
+                  onTap: () async {
+                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                      Navigator.pushNamed(context, '/profile-edit');
+                    }
+                  },
                 ),
                 ProfileMenuItem(
                   iconUrl: 'assets/ic_pin.png',
                   title: 'My Pin',
-                  onTap: () {},
+                  onTap: () async {
+                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                      Navigator.pushNamed(context, '/profile-pin-edit');
+                    }
+                  },
                 ),
                 ProfileMenuItem(
                   iconUrl: 'assets/ic_wallet.png',
@@ -125,7 +127,7 @@ class ProfilePage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 87,
           ),
           CustomTextButton(
