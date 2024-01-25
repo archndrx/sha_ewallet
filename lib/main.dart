@@ -1,5 +1,6 @@
 import 'package:e_wallet/view/pages/home_page.dart';
 import 'package:e_wallet/view/pages/onboarding_page.dart';
+import 'package:e_wallet/view/pages/profile_page.dart';
 import 'package:e_wallet/view/pages/sign_in_pages/sign_in_page.dart';
 import 'package:e_wallet/view/pages/sign_up_pages/sign_up_page.dart';
 import 'package:e_wallet/view/pages/sign_up_pages/sign_up_set_id_page.dart';
@@ -29,6 +30,7 @@ class MainApp extends StatelessWidget {
         '/sign-up-set-id': (context) => const SignUpSetIDPage(),
         '/sign-up-success': (context) => const SignUpSuccessPage(),
         '/home': (context) => const HomePage(),
+        '/profile': (context) => const ProfilePage(),
       },
     );
   }
