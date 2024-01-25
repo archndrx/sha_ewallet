@@ -1,3 +1,4 @@
+import 'package:e_wallet/shared/theme.dart';
 import 'package:e_wallet/view/pages/home_page.dart';
 import 'package:e_wallet/view/pages/onboarding_page.dart';
 import 'package:e_wallet/view/pages/profile_page.dart';
@@ -19,6 +20,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: lightBackgroundColor,
+      ),
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
