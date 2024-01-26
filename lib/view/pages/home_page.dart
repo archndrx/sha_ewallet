@@ -308,7 +308,12 @@ class HomePage extends StatelessWidget {
               HomeServicesItem(
                 iconUrl: 'assets/ic_more.png',
                 title: 'More',
-                onTap: () {},
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => const MoreDialog(),
+                  );
+                },
               ),
             ],
           )
@@ -448,6 +453,7 @@ class HomePage extends StatelessWidget {
             width: double.maxFinite,
             child: Wrap(
               alignment: WrapAlignment.spaceBetween,
+              spacing: 18,
               runSpacing: 18,
               children: [
                 HomeTipsItem(
@@ -474,6 +480,89 @@ class HomePage extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class MoreDialog extends StatelessWidget {
+  const MoreDialog({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.transparent,
+      insetPadding: EdgeInsets.zero,
+      alignment: Alignment.bottomCenter,
+      content: Container(
+        padding: const EdgeInsets.all(
+          30,
+        ),
+        height: 326,
+        width: MediaQuery.of(context).size.width - 24,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            40,
+          ),
+          color: lightBackgroundColor,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Do More With Us",
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: semibold,
+              ),
+            ),
+            const SizedBox(
+              height: 13,
+            ),
+            SizedBox(
+              width: double.maxFinite,
+              child: Wrap(
+                alignment: WrapAlignment.spaceBetween,
+                spacing: 29,
+                runSpacing: 29,
+                children: [
+                  HomeServicesItem(
+                    iconUrl: 'assets/ic_product_data.png',
+                    title: 'Data',
+                    onTap: () {
+                      Navigator.pushNamed(context, '/data-provider');
+                    },
+                  ),
+                  HomeServicesItem(
+                    iconUrl: 'assets/ic_product_water.png',
+                    title: 'Water',
+                    onTap: () {},
+                  ),
+                  HomeServicesItem(
+                    iconUrl: 'assets/ic_product_stream.png',
+                    title: 'Stream',
+                    onTap: () {},
+                  ),
+                  HomeServicesItem(
+                    iconUrl: 'assets/ic_product_movie.png',
+                    title: 'Movie',
+                    onTap: () {},
+                  ),
+                  HomeServicesItem(
+                    iconUrl: 'assets/ic_product_food.png',
+                    title: 'Food',
+                    onTap: () {},
+                  ),
+                  HomeServicesItem(
+                    iconUrl: 'assets/ic_product_travel.png',
+                    title: 'Travel',
+                    onTap: () {},
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
