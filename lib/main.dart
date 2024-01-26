@@ -1,4 +1,6 @@
 import 'package:e_wallet/shared/theme.dart';
+import 'package:e_wallet/view/pages/data_provider_page/data_package_page.dart';
+import 'package:e_wallet/view/pages/data_provider_page/data_success_page.dart';
 import 'package:e_wallet/view/pages/home_page.dart';
 import 'package:e_wallet/view/pages/onboarding_page.dart';
 import 'package:e_wallet/view/pages/pin_page.dart';
@@ -6,6 +8,7 @@ import 'package:e_wallet/view/pages/profile_pages/profile_edit_pin_page.dart';
 import 'package:e_wallet/view/pages/profile_pages/edit_profile_page.dart';
 import 'package:e_wallet/view/pages/profile_pages/profile_page.dart';
 import 'package:e_wallet/view/pages/profile_pages/profile_success_page.dart';
+import 'package:e_wallet/view/pages/data_provider_page/data_provider_page.dart';
 import 'package:e_wallet/view/pages/sign_in_pages/sign_in_page.dart';
 import 'package:e_wallet/view/pages/sign_up_pages/sign_up_page.dart';
 import 'package:e_wallet/view/pages/sign_up_pages/sign_up_set_id_page.dart';
@@ -67,6 +70,9 @@ class MainApp extends StatelessWidget {
         '/transfer': (context) => const Transferpage(),
         '/transfer-amount': (context) => const TransferAmountPage(),
         '/transfer-success': (context) => const TransferSuccessPage(),
+        '/data-provider': (context) => const DataProviderPage(),
+        '/data-package': (context) => const DataPackagePage(),
+        '/data-success': (context) => const DataSuccessPage(),
       },
     );
   }
