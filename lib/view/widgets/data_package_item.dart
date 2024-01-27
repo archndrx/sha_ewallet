@@ -10,7 +10,7 @@ class DataPackageItem extends StatelessWidget {
     required this.price,
   });
 
-  final int amount;
+  final String amount;
   final int price;
   final bool isSelected;
 
