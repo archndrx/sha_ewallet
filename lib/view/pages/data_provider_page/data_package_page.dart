@@ -67,20 +67,20 @@ class DataPackagePage extends StatelessWidget {
               children: [
                 DataPackageItem(
                   amount: '10',
-                  price: '218.000',
+                  price: 218000,
                   isSelected: true,
                 ),
                 DataPackageItem(
                   amount: '25',
-                  price: '420.000',
+                  price: 420000,
                 ),
                 DataPackageItem(
                   amount: '40',
-                  price: '2.500.000',
+                  price: 2500000,
                 ),
                 DataPackageItem(
                   amount: '99',
-                  price: '5.000.000',
+                  price: 5000000,
                 ),
               ],
             ),
