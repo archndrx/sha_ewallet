@@ -1,3 +1,4 @@
+import 'package:e_wallet/shared/shared_methods.dart';
 import 'package:e_wallet/shared/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -9,8 +10,8 @@ class DataPackageItem extends StatelessWidget {
     required this.price,
   });
 
-  final String amount;
-  final String price;
+  final int amount;
+  final int price;
   final bool isSelected;
 
   @override
@@ -44,7 +45,7 @@ class DataPackageItem extends StatelessWidget {
             height: 6,
           ),
           Text(
-            'Rp $price',
+            formatCurrency(price),
             style: greyTextStyle.copyWith(
               fontSize: 12,
               fontWeight: regular,
