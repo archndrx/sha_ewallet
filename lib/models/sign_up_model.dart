@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class SignUpModel {
   final String? name;
   final String? email;
