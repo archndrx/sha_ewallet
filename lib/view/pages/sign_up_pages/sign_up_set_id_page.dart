@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:e_wallet/blocs/auth/auth_bloc.dart';
 import 'package:e_wallet/models/sign_up_model.dart';
 import 'package:e_wallet/shared/shared_methods.dart';
 import 'package:e_wallet/shared/theme.dart';
 import 'package:e_wallet/view/widgets/buttons.dart';
-import 'package:e_wallet/viewmodel/blocs/auth/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';

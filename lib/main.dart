@@ -1,3 +1,4 @@
+import 'package:e_wallet/blocs/auth/auth_bloc.dart';
 import 'package:e_wallet/shared/theme.dart';
 import 'package:e_wallet/view/pages/data_provider_page/data_package_page.dart';
 import 'package:e_wallet/view/pages/data_provider_page/data_success_page.dart';
@@ -19,7 +20,6 @@ import 'package:e_wallet/view/pages/top_up_pages/topup_succcess.dart';
 import 'package:e_wallet/view/pages/transfer_pages/transfer_amount._page.dart';
 import 'package:e_wallet/view/pages/transfer_pages/transfer_page.dart';
 import 'package:e_wallet/view/pages/transfer_pages/transfer_success_page.dart';
-import 'package:e_wallet/viewmodel/blocs/auth/auth_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
