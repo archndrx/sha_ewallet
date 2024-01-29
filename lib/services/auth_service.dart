@@ -86,10 +86,7 @@ class AuthService {
       await storage.write(key: 'email', value: user.email);
       user = user.copyWith(password: user.password);
       await storage.write(key: 'password', value: user.password);
-      print(
-          'email: ${user.email},\npassword: ${user.password},\ntoken: ${user.token}');
     } catch (e) {
-      print('gagal ${e}');
       rethrow;
     }
   }
