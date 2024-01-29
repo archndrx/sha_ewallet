@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:e_wallet/shared/theme.dart';
 import 'package:e_wallet/viewmodel/blocs/auth/auth_bloc.dart';
 import 'package:flutter/material.dart';
