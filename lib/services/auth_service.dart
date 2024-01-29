@@ -33,12 +33,6 @@ class AuthService {
         body: data.toJson(),
       );
 
-      print('=====DATA=====');
-      print(data.toJson());
-      print('=====BODY=====');
-      print(res.body);
-      print('=====STATUSCODE=====');
-      print(res.statusCode);
       if (res.statusCode == 200) {
         UserModel user = UserModel.fromJson(
           jsonDecode(res.body),
