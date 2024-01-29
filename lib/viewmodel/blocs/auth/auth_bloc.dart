@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:e_wallet/models/sign_in_model.dart';
 import 'package:e_wallet/models/sign_up_model.dart';
 import 'package:e_wallet/models/user_model.dart';
 import 'package:e_wallet/services/auth_service.dart';
@@ -12,7 +13,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthEvent>((event, emit) async {
       if (event is AuthCheckEmail) {
         try {
-          emit(AuthLoading());
+          emit(
+            AuthLoading(),
+          );
 
           final res = await AuthService().checkEmail(event.email);
 
@@ -36,8 +39,54 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
       if (event is AuthRegister) {
         try {
-          emit(AuthLoading());
+          emit(
+            AuthLoading(),
+          );
+
           final user = await AuthService().register(event.data);
+
+          emit(
+            AuthSuccess(user),
+          );
+        } catch (e) {
+          emit(
+            AuthFailed(
+              e.toString(),
+            ),
+          );
+        }
+      }
+
+      if (event is AuthLogin) {
+        try {
+          emit(
+            AuthLoading(),
+          );
+
+          final user = await AuthService().login(event.data);
+
+          emit(
+            AuthSuccess(user),
+          );
+        } catch (e) {
+          emit(
+            AuthFailed(
+              e.toString(),
+            ),
+          );
+        }
+      }
+
+      if (event is AuthGetCurrentUser) {
+        try {
+          emit(
+            AuthLoading(),
+          );
+
+          final SignInModel data = await AuthService().getCredentialFromLocal();
+
+          final UserModel user = await AuthService().login(data);
+
           emit(AuthSuccess(user));
         } catch (e) {
           emit(
