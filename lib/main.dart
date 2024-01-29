@@ -35,7 +35,10 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => AuthBloc(),
+          create: (context) => AuthBloc()
+            ..add(
+              AuthGetCurrentUser(),
+            ),
         ),
       ],
       child: MaterialApp(
@@ -59,7 +62,7 @@ class MainApp extends StatelessWidget {
         routes: {
           '/': (context) => const SplashPage(),
           '/onboarding': (context) => const OnboardingPage(),
-          '/sign-in': (context) => const SignInpage(),
+          '/sign-in': (context) => const SignInPage(),
           '/sign-up': (context) => const SignUpPage(),
           '/sign-up-success': (context) => const SignUpSuccessPage(),
           '/home': (context) => const HomePage(),
